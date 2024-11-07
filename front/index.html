@@ -6,6 +6,7 @@
     <title>Apprendre les Risques Majeurs</title>
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <main>
@@ -283,28 +284,28 @@
                     <span class="close">&times;</span>
                     <h2>Zones de Risques Naturels</h2>
                     <div class="risk-grid-ados">
-                        <div class="risk-card-ados" data-modal="feuAdosModal">
+                        <div class="risk-card-ados" data-risk-type="feu" data-modal="feuAdosModal">
                             <div class="card-content">
                                 <img src="images/imgs/incendies.png" alt="Feu de forêt">
                                 <h3>Feux de forêts</h3>
                                 <p>Découvrez les comportements à adopter face aux incendies</p>
                             </div>
                         </div>
-                        <div class="risk-card-ados" data-modal="inondationAdosModal">
+                        <div class="risk-card-ados" data-risk-type="inondation" data-modal="inondationAdosModal">
                             <div class="card-content">
                                 <img src="images/imgs/inondation.png" alt="Inondation">
                                 <h3>Inondations</h3>
                                 <p>Apprenez à gérer les situations d'inondation</p>
                             </div>
                         </div>
-                        <div class="risk-card-ados" data-modal="seismeAdosModal">
+                        <div class="risk-card-ados" data-risk-type="seisme" data-modal="seismeAdosModal">
                             <div class="card-content">
                                 <img src="images/imgs/tremblement-de-terre.png" alt="Séisme">
                                 <h3>Tremblements de terre</h3>
                                 <p>Les réflexes essentiels en cas de séisme</p>
                             </div>
                         </div>
-                        <div class="risk-card-ados" data-modal="tsunamiAdosModal">
+                        <div class="risk-card-ados" data-risk-type="tsunami" data-modal="tsunamiAdosModal">
                             <div class="card-content">
                                 <img src="images/imgs/tsunami.png" alt="Tsunami">
                                 <h3>Tsunamis</h3>
@@ -320,7 +321,7 @@
                     <h2>Prévention et Gestion des Feux de Forêts</h2>
                     <div class="risk-content-ados">
                         <div class="info-section-ados">
-                            <img src="images/imgs/feu-prevention-ados.jpg" alt="Analyse feux de forêt">
+                            <img src="images/imgs/Forest fire.png" alt="Analyse feux de forêt">
                             <h3>Protocole de Sécurité</h3>
                             <ul>
                                 <li>Identifier les zones à risque et les périodes propices aux incendies</li>
@@ -329,16 +330,93 @@
                                 <li>Numéros d'urgence : 18 (Pompiers), 112 (Urgences Européennes)</li>
                             </ul>
                         </div>
-                        <div class="simulation-section">
-                            <h3>Scénario d'Intervention</h3>
-                            <div class="scenario">
-                                <p>Tu découvres un départ de feu en forêt. Quelle est la séquence d'actions correcte ?</p>
-                                <div class="action-sequence">
-                                    <button class="sequence-btn" data-order="1">Alerter les secours</button>
-                                    <button class="sequence-btn" data-order="2">Évaluer la direction du vent</button>
-                                    <button class="sequence-btn" data-order="3">S'éloigner perpendiculairement au vent</button>
-                                </div>
-                            </div>
+                        <div class="scenario-container">
+                        <div class="score-display">Score: <span class="points">0</span></div>
+                        <div class="question-container"></div>
+                        <div class="actions-container"></div>
+                        <div class="feedback-message"></div>
+                        <button class="next-scenario">Question suivante</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modale Inondations Ados -->
+            <div id="inondationAdosModal" class="modal-container-ados">
+                <div class="modal-content-ados">
+                    <span class="close">&times;</span>
+                    <h2>Gestion des Risques d'Inondation</h2>
+                    <div class="risk-content-ados">
+                        <div class="info-section-ados">
+                            <img src="images/imgs/Flood.png" alt="Analyse inondation">
+                            <h3>Protocole de Sécurité</h3>
+                            <ul>
+                                <li>Identifier les zones inondables et points hauts</li>
+                                <li>Surveiller les bulletins météo et alertes</li>
+                                <li>Connaître les itinéraires d'évacuation</li>
+                                <li>Préparer un kit d'urgence étanche</li>
+                            </ul>
+                        </div>
+                        <div class="scenario-container">
+                            <div class="score-display">Score: <span class="points">0</span></div>
+                            <div class="question-container"></div>
+                            <div class="actions-container"></div>
+                            <div class="feedback-message"></div>
+                            <button class="next-scenario">Question suivante</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modale Séismes Ados -->
+            <div id="seismeAdosModal" class="modal-container-ados">
+                <div class="modal-content-ados">
+                    <span class="close">&times;</span>
+                    <h2>Protection contre les Séismes</h2>
+                    <div class="risk-content-ados">
+                        <div class="info-section-ados">
+                            <img src="images/imgs/Earthquake.png" alt="Analyse séisme">
+                            <h3>Protocole de Sécurité</h3>
+                            <ul>
+                                <li>Repérer les points de protection (tables solides, encadrements)</li>
+                                <li>Identifier les sorties de secours</li>
+                                <li>Connaître l'emplacement des compteurs (gaz, électricité)</li>
+                                <li>Préparer un kit de survie accessible</li>
+                            </ul>
+                        </div>
+                        <div class="scenario-container">
+                            <div class="score-display">Score: <span class="points">0</span></div>
+                            <div class="question-container"></div>
+                            <div class="actions-container"></div>
+                            <div class="feedback-message"></div>
+                            <button class="next-scenario">Question suivante</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modale Tsunamis Ados -->
+            <div id="tsunamiAdosModal" class="modal-container-ados">
+                <div class="modal-content-ados">
+                    <span class="close">&times;</span>
+                    <h2>Prévention des Tsunamis</h2>
+                    <div class="risk-content-ados">
+                        <div class="info-section-ados">
+                            <img src="images/imgs/Tsunami analyse.png" alt="Analyse tsunami">
+                            <h3>Protocole de Sécurité</h3>
+                            <ul>
+                                <li>Connaître les signes précurseurs (retrait anormal de la mer)</li>
+                                <li>Identifier les zones refuges en hauteur</li>
+                                <li>Mémoriser les itinéraires d'évacuation</li>
+                                <li>Suivre les consignes des autorités</li>
+                            </ul>
+                        </div>
+                        <div class="scenario-container">
+                            <div class="score-display">Score: <span class="points">0</span></div>
+                            <div class="question-container"></div>
+                            <div class="actions-container"></div>
+                            <div class="feedback-message"></div>
+                            <button class="next-scenario">Question suivante</button>
                         </div>
                     </div>
                 </div>
@@ -364,8 +442,26 @@
                 </div>
             </div>
         </section>
+        <div id="plugin-modal" style="display:none;">
+            <div class="modal-content-plugin">
+                <span class="close">&times;</span>
+                <h2>Système d'Alerte</h2>
+                <p>Activez les notifications pour être informé des risques naturels.</p>
+                <button onclick="initPlugin()">Activer les Notifications</button>
+            </div>
+        </div>
+
+        <section id="alerts">
+            <h2>Alertes Actuelles</h2>
+            <button onclick="testNotification()">Send Test Notification</button>
+        </section>
+    </main>
 
     <script src="js/main.js"></script>
     <script src="js/chat.js"></script>
+    <script src="js/scenarios.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="./service-worker.js"></script>
+   
 </body>
 </html>

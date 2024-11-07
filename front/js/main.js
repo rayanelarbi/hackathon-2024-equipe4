@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     // Sélection des éléments pour les enfants
     const mainModalBtn = document.getElementById('openMainModal');
@@ -33,10 +32,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Gestion des cartes de risques pour ados
     riskCardsAdos.forEach(card => {
         card.addEventListener('click', () => {
-            const modalId = card.getAttribute('data-modal');
-            const targetModal = document.getElementById(modalId);
-            adosModal.style.display = 'none';
-            targetModal.style.display = 'block';
+            const riskType = card.dataset.riskType;
+            const modal = document.querySelector(`#${riskType}AdosModal`);
+            if (modal) {
+                modal.style.display = 'block';
+                // Initialiser le jeu de scénario après un court délai pour s'assurer que la modale est visible
+                setTimeout(() => {
+                    new ScenarioGame(riskType, scenarios);
+                }, 300);
+            }
         });
     });
 
@@ -69,6 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialisation du jeu de mémoire
     initializeMemoryGame();
+
+    // Initialisation des scénarios
+    initializeScenarios();
 });
 
 // Logique du jeu de mémoire
@@ -162,3 +169,29 @@ function initializeMemoryGame() {
         initGame();
     });
 }
+
+// Initialisation des scénarios
+function initializeScenarios() {
+    document.querySelectorAll('.risk-card-ados').forEach(card => {
+        card.addEventListener('click', () => {
+            const riskType = card.dataset.riskType;
+            const modal = document.querySelector(`#${riskType}AdosModal`);
+            
+            if (modal) {
+                modal.style.display = 'block';
+                // Add a small delay to ensure DOM is ready
+                setTimeout(() => {
+                    const game = new ScenarioGame(riskType, scenarios);
+                }, 100);
+            }
+        });
+    });
+}
+
+    // Close modal functionality
+    document.querySelectorAll('.close').forEach(closeBtn => {
+        closeBtn.addEventListener('click', () => {
+            closeBtn.closest('.modal-container-ados').style.display = 'none';
+        });
+    });
+
