@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FEU DE FORET</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Quiz sur les séismes (6-11 ans)</h2>
+
+    <div class="question">
+        <p>Question 1 :</p>
+        <p>Que dois-tu faire si tu es à l'intérieur et que tu sens la terre trembler ?</p>
+        <label><input type="radio" name="q1" value="A"> A) Courir dehors le plus vite possible.</label><br>
+        <label><input type="radio" name="q1" value="B"> B) Te mettre sous une table ou contre un mur porteur et protéger ta tête.</label><br>
+        <label><input type="radio" name="q1" value="C"> C) Regarder autour de toi pour voir ce qui tombe.</label><br>
+    </div>
+
+    <div class="question">
+        <p>Question 2 :</p>
+        <p>Pourquoi est-il important de ne pas utiliser l'ascenseur pendant un tremblement de terre ?</p>
+        <label><input type="radio" name="q2" value="A"> A) Parce que ça peut être lent.</label><br>
+        <label><input type="radio" name="q2" value="B"> B) Parce que l'ascenseur pourrait rester coincé.</label><br>
+        <label><input type="radio" name="q2" value="C"> C) Parce que c'est plus amusant de prendre les escaliers.</label><br>
+    </div>
+
+    <div class="question">
+        <p>Question 3 :</p>
+        <p>Que dois-tu faire si tu es dehors pendant un séisme ?</p>
+        <label><input type="radio" name="q3" value="A"> A) Te rapprocher des arbres et des bâtiments.</label><br>
+        <label><input type="radio" name="q3" value="B"> B) Rester loin des bâtiments, des arbres et des fils électriques.</label><br>
+        <label><input type="radio" name="q3" value="C"> C) T'asseoir par terre et fermer les yeux.</label><br>
+    </div>
+
+    <button onclick="checkAnswers()">Soumettre</button>
+
+    <p class="result" id="result"></p>
+
+    <script>
+        function checkAnswers() {
+            // Réponses correctes
+            const correctAnswers = {
+                q1: "B", // Correction de la réponse correcte
+                q2: "B",
+                q3: "B"  // Correction de la réponse correcte
+            };
+
+            // Variables pour compter les réponses correctes
+            let score = 0;
+            let totalQuestions = Object.keys(correctAnswers).length;
+
+            // Vérification des réponses
+            for (let question in correctAnswers) {
+                const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            // Affichage du résultat
+            const resultElement = document.getElementById("result");
+            resultElement.textContent = `Vous avez obtenu ${score} sur ${totalQuestions}.`;
+
+            if (score === totalQuestions) {
+                resultElement.textContent += " Bravo, toutes les réponses sont correctes !";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent += " Révisez un peu plus pour mieux comprendre les consignes de sécurité.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

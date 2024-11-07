@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FEU DE FORET</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Quiz sur les FEU DE FORET (6-11 ans)</h2>
+
+    <div class="question">
+        <p>Question 1 :</p>
+        <p>Pourquoi est-il important de ne pas jouer avec des allumettes ou un briquet ?</p>
+        <label><input type="radio" name="q1" value="A"> A) Parce que ça peut faire du bruit.</label><br>
+        <label><input type="radio" name="q1" value="B"> B) Parce que cela peut provoquer un incendie.</label><br>
+        <label><input type="radio" name="q1" value="C"> C) Parce que ce sont des objets de collection.</label><br>
+    </div>
+
+    <div class="question">
+        <p>Question 2 :</p>
+        <p>Que dois-tu faire si tu vois de la fumée ou un incendie dans la maison ?</p>
+        <label><input type="radio" name="q2" value="A"> A) Aller voir de plus près pour mieux comprendre.</label><br>
+        <label><input type="radio" name="q2" value="B"> B) Courir vers la cuisine pour chercher de l'eau.</label><br>
+        <label><input type="radio" name="q2" value="C"> C) Sortir de la maison rapidement et appeler un adulte.</label><br>
+    </div>
+
+    <div class="question">
+        <p>Question 3 :</p>
+        <p>Quelle est la meilleure chose à faire si tes vêtements prennent feu ?</p>
+        <label><input type="radio" name="q3" value="A"> A) Courir pour éloigner les flammes.</label><br>
+        <label><input type="radio" name="q3" value="B"> B) Crier très fort pour faire peur au feu.</label><br>
+        <label><input type="radio" name="q3" value="C"> C) S'arrêter, se jeter au sol et rouler pour étouffer les flammes.</label><br>
+    </div>
+
+    <button onclick="checkAnswers()">Soumettre</button>
+
+    <p class="result" id="result"></p>
+
+    <script>
+        function checkAnswers() {
+            // Réponses correctes
+            const correctAnswers = {
+                q1: "B", // Correction de la réponse correcte
+                q2: "C", // Correction de la réponse correcte
+                q3: "C"  // Correction de la réponse correcte
+            };
+
+            // Variables pour compter les réponses correctes
+            let score = 0;
+            let totalQuestions = Object.keys(correctAnswers).length;
+
+            // Vérification des réponses
+            for (let question in correctAnswers) {
+                const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            // Affichage du résultat
+            const resultElement = document.getElementById("result");
+            resultElement.textContent = `Vous avez obtenu ${score} sur ${totalQuestions}.`;
+
+            if (score === totalQuestions) {
+                resultElement.textContent += " Bravo, toutes les réponses sont correctes !";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent += " Révisez un peu plus pour mieux comprendre les consignes de sécurité.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

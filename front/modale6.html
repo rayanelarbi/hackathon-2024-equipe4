@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FEU DE FORET</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Quiz sur les INONDATIONS (6-11 ans)</h2>
+
+    <div class="question">
+        <p>Question 1 :</p>
+        <p>Que dois-tu faire si tu vois que l'eau commence à monter rapidement autour de toi?</p>
+        <label><input type="radio" name="q1" value="A"> A) Rester où tu es et attendre que l'eau s'arrête de monter.</label><br>
+        <label><input type="radio" name="q1" value="B"> B) Monter sur une table ou un endroit plus élevé et appeler un adulte.</label><br>
+        <label><input type="radio" name="q1" value="C"> C) Sortir dehors pour jouer dans l'eau.</label><br>
+    </div>
+
+    <div class="question">
+        <p>Question 2 :</p>
+        <p>Pourquoi est-il dangereux de jouer dans l'eau d'une inondation ?</p>
+        <label><input type="radio" name="q2" value="A"> A) Parce que l'eau est froide.</label><br>
+        <label><input type="radio" name="q2" value="B"> B) Parce que l'eau peut être sale et cacher des dangers comme des objets pointus.</label><br>
+        <label><input type="radio" name="q2" value="C"> C) Parce que ça peut abîmer tes chaussures.</label><br>
+    </div>
+
+    <div class="question">
+        <p>Question 3 :</p>
+        <p>Que faut-il faire si tu dois évacuer la maison à cause d'une inondation ?</p>
+        <label><input type="radio" name="q3" value="A"> A) Prendre le maximum de jouets avec toi.</label><br>
+        <label><input type="radio" name="q3" value="B"> B) Suivre calmement les adultes et ne pas retourner chercher des affaires.</label><br>
+        <label><input type="radio" name="q3" value="C"> C) Rester dans ta chambre et attendre que l'eau descende.</label><br>
+    </div>
+
+    <button onclick="checkAnswers()">Soumettre</button>
+
+    <p class="result" id="result"></p>
+
+    <script>
+        function checkAnswers() {
+            // Réponses correctes
+            const correctAnswers = {
+                q1: "B", // Correction de la réponse correcte
+                q2: "B",
+                q3: "B"  // Correction de la réponse correcte
+            };
+
+            // Variables pour compter les réponses correctes
+            let score = 0;
+            let totalQuestions = Object.keys(correctAnswers).length;
+
+            // Vérification des réponses
+            for (let question in correctAnswers) {
+                const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            // Affichage du résultat
+            const resultElement = document.getElementById("result");
+            resultElement.textContent = `Vous avez obtenu ${score} sur ${totalQuestions}.`;
+
+            if (score === totalQuestions) {
+                resultElement.textContent += " Bravo, toutes les réponses sont correctes !";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent += " Révisez un peu plus pour mieux comprendre les consignes de sécurité.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

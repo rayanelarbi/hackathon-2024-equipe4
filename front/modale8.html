@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FEU DE FORET</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Quiz sur les TSUNAMI (6-11 ans)</h2>
+
+    <div class="question">
+        <p>Question 1 :</p>
+        <p>Si tu es à la plage et que tu vois la mer se retirer soudainement, que dois-tu faire ?</p>
+        <label><input type="radio" name="q1" value="A"> A) Courir vers l’eau pour voir les poissons qui sont restés.</label><br>
+        <label><input type="radio" name="q1" value="B"> B) T’éloigner rapidement de la plage et monter vers un endroit plus élevé.</label><br>
+        <label><input type="radio" name="q1" value="C"> C) Te cacher sous un parasol.</label><br>
+    </div>
+
+    <div class="question">
+        <p>Question 2 :</p>
+        <p>Pourquoi est-il important d’écouter les sirènes ou les alarmes de tsunami ?</p>
+        <label><input type="radio" name="q2" value="A"> A) Parce qu'elles sont bruyantes.</label><br>
+        <label><input type="radio" name="q2" value="B"> B) Parce qu'elles préviennent d'un danger, et il faut évacuer rapidement.</label><br>
+        <label><input type="radio" name="q2" value="C"> C) Parce qu’elles peuvent indiquer que le temps est bon pour la baignade.</label><br>
+    </div>
+
+    <div class="question">
+        <p>Question 3 :</p>
+        <p>Que dois-tu faire après un tsunami si tu es en sécurité ?</p>
+        <label><input type="radio" name="q3" value="A"> A) Revenir tout de suite à la plage pour voir les dégâts.</label><br>
+        <label><input type="radio" name="q3" value="B"> B) Rester en hauteur jusqu’à ce que les autorités disent qu’il est sûr de redescendre.</label><br>
+        <label><input type="radio" name="q3" value="C"> C) Aller jouer dans l'eau laissée par le tsunami.</label><br>
+    </div>
+
+    <button onclick="checkAnswers()">Soumettre</button>
+
+    <p class="result" id="result"></p>
+
+    <script>
+        function checkAnswers() {
+            // Réponses correctes
+            const correctAnswers = {
+                q1: "B", // Correction de la réponse correcte
+                q2: "B",
+                q3: "B"  // Correction de la réponse correcte
+            };
+
+            // Variables pour compter les réponses correctes
+            let score = 0;
+            let totalQuestions = Object.keys(correctAnswers).length;
+
+            // Vérification des réponses
+            for (let question in correctAnswers) {
+                const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            // Affichage du résultat
+            const resultElement = document.getElementById("result");
+            resultElement.textContent = `Vous avez obtenu ${score} sur ${totalQuestions}.`;
+
+            if (score === totalQuestions) {
+                resultElement.textContent += " Bravo, toutes les réponses sont correctes !";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent += " Révisez un peu plus pour mieux comprendre les consignes de sécurité.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
