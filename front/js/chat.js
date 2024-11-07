@@ -26,7 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }];
 
     function formatAIResponse(text) {
-        return `<span class="big-text">${text}</span>`;
+        return `<span class="big-text">${text
+            .replace(/\n/g, '<br>')
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*(.*?)\*/g, '<em>$1</em>')
+            .replace(/`(.*?)`/g, '<code>$1</code>')
+            .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
+        }</span>`;
     }
 
     function addMessage(content, isUser) {
@@ -63,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify({
                     model: 'mistral-tiny',
                     messages: conversation,
-                    max_tokens: 150,
+                    max_tokens: 1000,
                     temperature: 0.7
                 })
             });
