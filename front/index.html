@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apprendre les Risques Majeurs</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animated-background.css">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    <div class="safety-icons">
+        <div class="safety-icon">🚨</div>
+        <div class="safety-icon">⚡</div>
+        <div class="safety-icon">🔥</div>
+        <div class="safety-icon">💧</div>
+    </div>
     <main>
         <section class="main-intro">
             <div class="video-background">
@@ -18,6 +25,7 @@
             </div>
             <h1>Plongez dans l'Art de la Prévention des Risques</h1>
             <p>Développez les réflexes qui protègent et faites de chaque jour une opportunité de sauver des vies !</p>
+            
         </section>
         <section class="container">
             <div class="container-image">
@@ -60,217 +68,328 @@
                     </div>
                 </div>
             </div>
-
-            <div id="feuModal" class="modal-container">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>L'Aventure des Pompiers de la Forêt</h2>
-                    <div class="risk-content">
-                        <div class="info-section-kids">
-                            <img src="images/imgs/Firefighter.png" alt="Mascotte pompier">
-                            <h3>Les Super Règles de Sécurité !</h3>
-                            <div class="rules-container">
-                                <div class="rule-card">
-                                    <img src="images/imgs/roles/Feu.png" alt="Règle 1">
-                                    <p>Ne jamais jouer avec le feu</p>
-                                </div>
-                                <div class="rule-card">
-                                    <img src="images/imgs/roles/Appeler.png" alt="Règle 2">
-                                    <p>Appeler les pompiers au 18</p>
-                                </div>
-                                <div class="rule-card">
-                                    <img src="images/imgs/roles/Eloigner.png" alt="Règle 3">
-                                    <p>S'éloigner vite avec un adulte</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-section">
-                            <h3>Jeu du Petit Pompier</h3>
-                            <div id="congratsMessage" style="display: none;">
-                                <p>Bravo ! Tu as gagné le jeu de mémoire ! 🎉</p>
-                            </div>
-                            <div class="memory-game">
-                                <div class="memory-card" data-card="pompier">
-                                    <img src="images/imgs/Pompier.png" alt="Pompier" class="front-face">
-                                    <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
-                                </div>
-                                <div class="memory-card" data-card="pompier">
-                                    <img src="images/imgs/Pompier.png" alt="Pompier" class="front-face">
-                                    <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
-                                </div>
-                                <div class="memory-card" data-card="camion">
-                                    <img src="images/imgs/Camion.png" alt="Camion pompier" class="front-face">
-                                    <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
-                                </div>
-                                <div class="memory-card" data-card="camion">
-                                    <img src="images/imgs/Camion.png" alt="Camion pompier" class="front-face">
-                                    <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
-                                </div>
-                                
-                            </div>
-                        </div>
+<!-- Modale Feux de Forêts - Enfants -->
+<div id="feuModal" class="modal-container">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>L'Aventure des Pompiers de la Forêt</h2>
+        <div class="risk-content">
+            <div class="info-section-kids">
+                <img src="images/imgs/Firefighter.png" alt="Mascotte pompier">
+                <h3>Les Super Règles de Sécurité !</h3>
+                <div class="rules-container">
+                    <div class="rule-card">
+                        <img src="images/imgs/roles/Feu.png" alt="Règle 1">
+                        <p>Ne jamais jouer avec le feu</p>
+                    </div>
+                    <div class="rule-card">
+                        <img src="images/imgs/roles/Appeler.png" alt="Règle 2">
+                        <p>Appeler les pompiers au 18</p>
+                    </div>
+                    <div class="rule-card">
+                        <img src="images/imgs/roles/Eloigner.png" alt="Règle 3">
+                        <p>S'éloigner vite avec un adulte</p>
                     </div>
                 </div>
             </div>
-
-            <!-- Modale Inondations - Enfants -->
-            <div id="inondationModal" class="modal-container">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>Les Aventuriers de l'Eau</h2>
-                    <div class="risk-content">
-                        <div class="info-section-kids">
-                            <img src="images/imgs/Lifeguard.png" alt="Mascotte sauveteur">
-                            <h3>Les Super Règles Anti-Inondation !</h3>
-                            <div class="rules-container">
-                                <div class="rule-card">
-                                    <img src="images/imgs/roles/Monter.png" alt="Règle 1">
-                                    <p>Monter en hauteur</p>
-                                </div>
-                                <div class="rule-card">
-                                    <img src="images/imgs/roles/Nager.png" alt="Règle 2">
-                                    <p>Ne jamais nager dans l'eau</p>
-                                </div>
-                                <div class="rule-card">
-                                    <img src="images/imgs/roles/Ecouter.png" alt="Règle 3">
-                                    <p>Écouter les adultes</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-section">
-                            <h3>Jeu de l'Échelle de Secours</h3>
-                            <div id="congratsMessage" style="display: none;">
-                                <p>Bravo ! Tu as gagné le jeu de mémoire ! 🎉</p>
-                            </div>
-                            <div class="memory-game">
-                                <div class="memory-card" data-card="bateau">
-                                    <img src="images/imgs/Bateau.png" alt="Bateau sauveteur" class="front-face">
-                                    <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
-                                </div>
-                                <div class="memory-card" data-card="bateau">
-                                    <img src="images/imgs/Bateau.png" alt="Bateau sauveteur" class="front-face">
-                                    <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
-                                </div>
-                                <div class="memory-card" data-card="gilet">
-                                    <img src="images/imgs/Gilet.png" alt="Gilet de sauvetage" class="front-face">
-                                    <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
-                                </div>
-                                <div class="memory-card" data-card="gilet">
-                                    <img src="images/imgs/Gilet.png" alt="Gilet de sauvetage" class="front-face">
-                                    <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
-                                </div>
-                               
-                            </div>
-                        </div>
+            <div class="game-section">
+                <h3>Jeu du Petit Pompier</h3>
+                <div id="congratsMessage" style="display: none;">
+                    <p>Bravo ! Tu as gagné le jeu de mémoire ! 🎉</p>
+                </div>
+                <div class="memory-game">
+                    <div class="memory-card" data-card="pompier">
+                        <img src="images/imgs/Pompier.png" alt="Pompier" class="front-face">
+                        <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
+                    </div>
+                    <div class="memory-card" data-card="pompier">
+                        <img src="images/imgs/Pompier.png" alt="Pompier" class="front-face">
+                        <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
+                    </div>
+                    <div class="memory-card" data-card="camion">
+                        <img src="images/imgs/Camion.png" alt="Camion pompier" class="front-face">
+                        <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
+                    </div>
+                    <div class="memory-card" data-card="camion">
+                        <img src="images/imgs/Camion.png" alt="Camion pompier" class="front-face">
+                        <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
                     </div>
                 </div>
             </div>
+            <!-- Quiz 1: Feux de forêt -->
+            <div class="section">
+                <h3>Quiz</h3>
+                <div class="question">
+                    <p>Question 1 :</p>
+                    <p>Pourquoi est-il important de ne pas jouer avec des allumettes ou un briquet ?</p>
+                    <label><input type="radio" name="q1_fire" value="A"> A) Parce que ça peut faire du bruit.</label><br>
+                    <label><input type="radio" name="q1_fire" value="B"> B) Parce que cela peut provoquer un incendie.</label><br>
+                    <label><input type="radio" name="q1_fire" value="C"> C) Parce que ce sont des objets de collection.</label><br>
+                </div>
+                <div class="question">
+                    <p>Question 2 :</p>
+                    <p>Que dois-tu faire si tu vois de la fumée ou un incendie dans la maison ?</p>
+                    <label><input type="radio" name="q2_fire" value="A"> A) Aller voir de plus près pour mieux comprendre.</label><br>
+                    <label><input type="radio" name="q2_fire" value="B"> B) Courir vers la cuisine pour chercher de l'eau.</label><br>
+                    <label><input type="radio" name="q2_fire" value="C"> C) Sortir de la maison rapidement et appeler un adulte.</label><br>
+                </div>
+                <div class="question">
+                    <p>Question 3 :</p>
+                    <p>Quelle est la meilleure chose à faire si tes vêtements prennent feu ?</p>
+                    <label><input type="radio" name="q3_fire" value="A"> A) Courir pour éloigner les flammes.</label><br>
+                    <label><input type="radio" name="q3_fire" value="B"> B) Crier très fort pour faire peur au feu.</label><br>
+                    <label><input type="radio" name="q3_fire" value="C"> C) S'arrêter, se jeter au sol et rouler pour étouffer les flammes.</label><br>
+                </div>
+                <button onclick="checkAnswers('fire')">Vérifier les réponses</button>
+                <div class="result" id="result_fire"></div>
+                <audio id="confetti-sound" src="audio/minecraft---experience-orb-made-with-Voicemod.mp3" preload="auto"></audio>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <!-- Modale Séismes - Enfants -->
-            <div id="seismeModal" class="modal-container">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>Les Super Héros Anti-Tremblements</h2>
-                    <div class="risk-content">
-                        <div class="info-section-kids">
-                            <img src="images/imgs/Protective.png" alt="Mascotte protection">
-                            <h3>Les Super Gestes qui Protègent !</h3>
-                            <div class="rules-container">
-                                <div class="rule-card">
-                                    <img src="images/imgs/roles/Cacher.png" alt="Règle 1">
-                                    <p>Se cacher sous une table</p>
-                                </div>
-                                <div class="rule-card">
-                                    <img src="images/imgs/roles/Loin.png" alt="Règle 2">
-                                    <p>Loin des fenêtres</p>
-                                </div>
-                                <div class="rule-card">
-                                    <img src="images/imgs/roles/Calme.png" alt="Règle 3">
-                                    <p>Rester calme</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-section">
-                            <h3>Jeu des Abris Sûrs</h3>
-                            <div id="congratsMessage" style="display: none;">
-                                <p>Bravo ! Tu as gagné le jeu de mémoire ! 🎉</p>
-                            </div>
-                            <div class="memory-game">
-                                <div class="memory-card" data-card="table">
-                                    <img src="images/imgs/Table.png" alt="Table protection" class="front-face">
-                                    <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
-                                </div>
-                                <div class="memory-card" data-card="table">
-                                    <img src="images/imgs/Table.png" alt="Table protection" class="front-face">
-                                    <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
-                                </div>
-                                <div class="memory-card" data-card="casque">
-                                    <img src="images/imgs/Casque de protection.png" alt="Casque protection" class="front-face">
-                                    <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
-                                </div>
-                                <div class="memory-card" data-card="casque">
-                                    <img src="images/imgs/Casque de protection.png" alt="Casque protection" class="front-face">
-                                    <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
-                                </div>
-                            
-                            </div>
-                        </div>
+
+          <!-- Modale Inondations - Enfants -->
+<div id="inondationModal" class="modal-container">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Les Aventuriers de l'Eau</h2>
+        <div class="risk-content">
+            <div class="info-section-kids">
+                <img src="images/imgs/Lifeguard.png" alt="Mascotte sauveteur">
+                <h3>Les Super Règles Anti-Inondation !</h3>
+                <div class="rules-container">
+                    <div class="rule-card">
+                        <img src="images/imgs/roles/Monter.png" alt="Règle 1">
+                        <p>Monter en hauteur</p>
+                    </div>
+                    <div class="rule-card">
+                        <img src="images/imgs/roles/Nager.png" alt="Règle 2">
+                        <p>Ne jamais nager dans l'eau</p>
+                    </div>
+                    <div class="rule-card">
+                        <img src="images/imgs/roles/Ecouter.png" alt="Règle 3">
+                        <p>Écouter les adultes</p>
                     </div>
                 </div>
             </div>
+            <div class="game-section">
+                <h3>Jeu de l'Échelle de Secours</h3>
+                <div id="congratsMessage" style="display: none;">
+                    <p>Bravo ! Tu as gagné le jeu de mémoire ! 🎉</p>
+                </div>
+                <div class="memory-game">
+                    <div class="memory-card" data-card="bateau">
+                        <img src="images/imgs/Bateau.png" alt="Bateau sauveteur" class="front-face">
+                        <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
+                    </div>
+                    <div class="memory-card" data-card="bateau">
+                        <img src="images/imgs/Bateau.png" alt="Bateau sauveteur" class="front-face">
+                        <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
+                    </div>
+                    <div class="memory-card" data-card="gilet">
+                        <img src="images/imgs/Gilet.png" alt="Gilet de sauvetage" class="front-face">
+                        <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
+                    </div>
+                    <div class="memory-card" data-card="gilet">
+                        <img src="images/imgs/Gilet.png" alt="Gilet de sauvetage" class="front-face">
+                        <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
+                    </div>
+                </div>
+            </div>
+            <!-- Quiz 2: Inondations -->
+            <div class="section">
+                <h3>Quiz</h3>
+                <div class="question">
+                    <p>Question 1 :</p>
+                    <p>Que dois-tu faire si tu vois que l'eau commence à monter rapidement autour de toi?</p>
+                    <label><input type="radio" name="q1_flood" value="A"> A) Rester où tu es et attendre que l'eau s'arrête de monter.</label><br>
+                    <label><input type="radio" name="q1_flood" value="B"> B) Monter sur une table ou un endroit plus élevé et appeler un adulte.</label><br>
+                    <label><input type="radio" name="q1_flood" value="C"> C) Sortir dehors pour jouer dans l'eau.</label><br>
+                </div>
+                <div class="question">
+                    <p>Question 2 :</p>
+                    <p>Pourquoi est-il dangereux de jouer dans l'eau d'une inondation ?</p>
+                    <label><input type="radio" name="q2_flood" value="A"> A) Parce que l'eau est froide.</label><br>
+                    <label><input type="radio" name="q2_flood" value="B"> B) Parce que l'eau peut être sale et cacher des dangers comme des objets pointus.</label><br>
+                    <label><input type="radio" name="q2_flood" value="C"> C) Parce que ça peut abîmer tes chaussures.</label><br>
+                </div>
+                <div class="question">
+                    <p>Question 3 :</p>
+                    <p>Que faut-il faire si tu dois évacuer la maison à cause d'une inondation ?</p>
+                    <label><input type="radio" name="q3_flood" value="A"> A) Prendre le maximum de jouets avec toi.</label><br>
+                    <label><input type="radio" name="q3_flood" value="B"> B) Suivre calmement les adultes et ne pas retourner chercher des affaires.</label><br>
+                    <label><input type="radio" name="q3_flood" value="C"> C) Rester dans ta chambre et attendre que l'eau descende.</label><br>
+                </div>
+                <button onclick="checkAnswers('flood')">Vérifier les réponses</button>
+                <div class="result" id="result_flood"></div>
+                <audio id="confetti-sound" src="audio/minecraft---experience-orb-made-with-Voicemod.mp3" preload="auto"></audio>
+            </div>
+        </div>
+    </div>
+</div>
+
+           <!-- Modale Séismes - Enfants -->
+<div id="seismeModal" class="modal-container">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Les Super Héros Anti-Tremblements</h2>
+        <div class="risk-content">
+            <div class="info-section-kids">
+                <img src="images/imgs/Protective.png" alt="Mascotte protection">
+                <h3>Les Super Gestes qui Protègent !</h3>
+                <div class="rules-container">
+                    <div class="rule-card">
+                        <img src="images/imgs/roles/Cacher.png" alt="Règle 1">
+                        <p>Se cacher sous une table</p>
+                    </div>
+                    <div class="rule-card">
+                        <img src="images/imgs/roles/Loin.png" alt="Règle 2">
+                        <p>Loin des fenêtres</p>
+                    </div>
+                    <div class="rule-card">
+                        <img src="images/imgs/roles/Calme.png" alt="Règle 3">
+                        <p>Rester calme</p>
+                    </div>
+                </div>
+            </div>
+            <div class="game-section">
+                <h3>Jeu des Abris Sûrs</h3>
+                <div id="congratsMessage" style="display: none;">
+                    <p>Bravo ! Tu as gagné le jeu de mémoire ! 🎉</p>
+                </div>
+                <div class="memory-game">
+                    <div class="memory-card" data-card="table">
+                        <img src="images/imgs/Table.png" alt="Table protection" class="front-face">
+                        <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
+                    </div>
+                    <div class="memory-card" data-card="table">
+                        <img src="images/imgs/Table.png" alt="Table protection" class="front-face">
+                        <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
+                    </div>
+                    <div class="memory-card" data-card="casque">
+                        <img src="images/imgs/Casque de protection.png" alt="Casque protection" class="front-face">
+                        <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
+                    </div>
+                    <div class="memory-card" data-card="casque">
+                        <img src="images/imgs/Casque de protection.png" alt="Casque protection" class="front-face">
+                        <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
+                    </div>
+                </div>
+            </div>
+            <!-- Quiz 3: Tremblements de Terre -->
+            <div class="section">
+                <h3>Quiz</h3>
+                <div class="question">
+                    <p>Question 1 :</p>
+                    <p>Que dois-tu faire si tu es à l'intérieur et que tu sens la terre trembler ?</p>
+                    <label><input type="radio" name="q1_earthquake" value="A"> A) Courir dehors le plus vite possible.</label><br>
+                    <label><input type="radio" name="q1_earthquake" value="B"> B) Te mettre sous une table ou contre un mur porteur et protéger ta tête.</label><br>
+                    <label><input type="radio" name="q1_earthquake" value="C"> C) Regarder autour de toi pour voir ce qui tombe.</label><br>
+                </div>
+                <div class="question">
+                    <p>Question 2 :</p>
+                    <p>Pourquoi est-il important de ne pas utiliser l'ascenseur pendant un tremblement de terre ?</p>
+                    <label><input type="radio" name="q2_earthquake" value="A"> A) Parce que ça peut être lent.</label><br>
+                    <label><input type="radio" name="q2_earthquake" value="B"> B) Parce que l'ascenseur pourrait rester coincé.</label><br>
+                    <label><input type="radio" name="q2_earthquake" value="C"> C) Parce que c'est plus amusant de prendre les escaliers.</label><br>
+                </div>
+                <div class="question">
+                    <p>Question 3 :</p>
+                    <p>Que dois-tu faire si tu es dehors pendant un séisme ?</p>
+                    <label><input type="radio" name="q3_earthquake" value="A"> A) Te rapprocher des arbres et des bâtiments.</label><br>
+                    <label><input type="radio" name="q3_earthquake" value="B"> B) Rester loin des bâtiments, des arbres et des fils électriques.</label><br>
+                    <label><input type="radio" name="q3_earthquake" value="C"> C) T'asseoir par terre et fermer les yeux.</label><br>
+                </div>
+                <button onclick="checkAnswers('earthquake')">Vérifier les réponses</button>
+                <div class="result" id="result_earthquake"></div>
+                <audio id="confetti-sound" src="audio/minecraft---experience-orb-made-with-Voicemod.mp3" preload="auto"></audio>
+            </div>
+        </div>
+    </div>
+</div>
+
 
             <!-- Modale Tsunamis - Enfants -->
-            <div id="tsunamiModal" class="modal-container">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>Les Explorateurs des Grandes Vagues</h2>
-                    <div class="risk-content">
-                        <div class="info-section-kids">
-                            <img src="images/imgs/EvacuatioN.png" alt="Mascotte évacuation">
-                            <h3>Les Super Règles de l'Océan !</h3>
-                            <div class="rules-container">
-                                <div class="rule-card">
-                                    <img src="images/imgs/roles/Courir.png" alt="Règle 1">
-                                    <p>Courir vers les hauteurs</p>
-                                </div>
-                                <div class="rule-card">
-                                    <img src="images/imgs/roles/Fleche.png" alt="Règle 2">
-                                    <p>Suivre les flèches vertes</p>
-                                </div>
-                                <div class="rule-card">
-                                    <img src="images/imgs/roles/Proche.png" alt="Règle 3">
-                                    <p>Rester avec le groupe</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-section">
-                            <h3>Jeu du Chemin Sûr</h3>
-                            <div id="congratsMessage" style="display: none;">
-                                <p>Bravo ! Tu as gagné le jeu de mémoire ! 🎉</p>
-                            </div>
-                            <div class="memory-game">
-                                <div class="memory-card" data-card="panneau">
-                                    <img src="images/imgs/Panneau.png" alt="Panneau évacuation" class="front-face">
-                                    <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
-                                </div>
-                                <div class="memory-card" data-card="panneau">
-                                    <img src="images/imgs/Panneau.png" alt="Panneau évacuation" class="front-face">
-                                    <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
-                                </div>
-                                <div class="memory-card" data-card="hauteur">
-                                    <img src="images/imgs/hauteur.png" alt="Point hauteur" class="front-face">
-                                    <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
-                                </div>
-                                <div class="memory-card" data-card="hauteur">
-                                    <img src="images/imgs/hauteur.png" alt="Point hauteur" class="front-face">
-                                    <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
-                                </div>
-                                
-                            </div>
-                        </div>
+<div id="tsunamiModal" class="modal-container">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Les Explorateurs des Grandes Vagues</h2>
+        <div class="risk-content">
+            <div class="info-section-kids">
+                <img src="images/imgs/EvacuatioN.png" alt="Mascotte évacuation">
+                <h3>Les Super Règles de l'Océan !</h3>
+                <div class="rules-container">
+                    <div class="rule-card">
+                        <img src="images/imgs/roles/Courir.png" alt="Règle 1">
+                        <p>Courir vers les hauteurs</p>
+                    </div>
+                    <div class="rule-card">
+                        <img src="images/imgs/roles/Fleche.png" alt="Règle 2">
+                        <p>Suivre les flèches vertes</p>
+                    </div>
+                    <div class="rule-card">
+                        <img src="images/imgs/roles/Proche.png" alt="Règle 3">
+                        <p>Rester avec le groupe</p>
                     </div>
                 </div>
             </div>
+            <div class="game-section">
+                <h3>Jeu du Chemin Sûr</h3>
+                <div id="congratsMessage" style="display: none;">
+                    <p>Bravo ! Tu as gagné le jeu de mémoire ! 🎉</p>
+                </div>
+                <div class="memory-game">
+                    <div class="memory-card" data-card="panneau">
+                        <img src="images/imgs/Panneau.png" alt="Panneau évacuation" class="front-face">
+                        <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
+                    </div>
+                    <div class="memory-card" data-card="panneau">
+                        <img src="images/imgs/Panneau.png" alt="Panneau évacuation" class="front-face">
+                        <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
+                    </div>
+                    <div class="memory-card" data-card="hauteur">
+                        <img src="images/imgs/hauteur.png" alt="Point hauteur" class="front-face">
+                        <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
+                    </div>
+                    <div class="memory-card" data-card="hauteur">
+                        <img src="images/imgs/hauteur.png" alt="Point hauteur" class="front-face">
+                        <img src="images/imgs/dos.png" alt="Dos de carte" class="back-face">
+                    </div>
+                </div>
+            </div>
+            <!-- Quiz 4: Tsunami -->
+            <div class="section">
+                <h3>Quiz</h3>
+                <div class="question">
+                    <p>Question 1 :</p>
+                    <p>Si tu es à la plage et que tu vois la mer se retirer soudainement, que dois-tu faire ?</p>
+                    <label><input type="radio" name="q1_tsunami" value="A"> A) Courir vers l’eau pour voir les poissons qui sont restés.</label><br>
+                    <label><input type="radio" name="q1_tsunami" value="B"> B) T’éloigner rapidement de la plage et monter vers un endroit plus élevé.</label><br>
+                    <label><input type="radio" name="q1_tsunami" value="C"> C) Te cacher sous un parasol.</label><br>
+                </div>
+                <div class="question">
+                    <p>Question 2 :</p>
+                    <p>Pourquoi est-il important d’écouter les sirènes ou les alarmes de tsunami ?</p>
+                    <label><input type="radio" name="q2_tsunami" value="A"> A) Parce qu'elles sont bruyantes.</label><br>
+                    <label><input type="radio" name="q2_tsunami" value="B"> B) Parce qu'elles préviennent d'un danger, et il faut évacuer rapidement.</label><br>
+                    <label><input type="radio" name="q2_tsunami" value="C"> C) Parce qu'elles annoncent des promotions de plage.</label><br>
+                </div>
+                <div class="question">
+                    <p>Question 3 :</p>
+                    <p>Que dois-tu faire une fois que tu es à l'abri d'un tsunami ?</p>
+                    <label><input type="radio" name="q3_tsunami" value="A"> A) Attendre les informations des autorités avant de retourner près de la mer.</label><br>
+                    <label><input type="radio" name="q3_tsunami" value="B"> B) Retourner immédiatement sur la plage pour voir les vagues.</label><br>
+                    <label><input type="radio" name="q3_tsunami" value="C"> C) Appeler tes amis pour leur montrer ce que tu as vu.</label><br>
+                </div>
+                <button onclick="checkAnswers('tsunami')">Vérifier les réponses</button>
+                <div class="result" id="result_tsunami"></div>
+                <audio id="confetti-sound" src="audio/minecraft---experience-orb-made-with-Voicemod.mp3" preload="auto"></audio>
+            </div>
+        </div>
+    </div>
+</div>
+
 
             <div class="ados">
                 <h2>Activités pour les plus grands</h2>
@@ -460,11 +579,13 @@
             <button onclick="testNotification()">Send Test Notification</button>
         </section>
     </main>
+    <audio id="confetti-sound" src="audio/minecraft---experience-orb-made-with-Voicemod.mp3" preload="auto"></audio>
 
     <script src="js/main.js"></script>
     <script src="js/chat.js"></script>
     <script src="js/scenarios.js"></script>
     <script src="js/carousel.js"></script>
+    <script src="js/quiz.js"></script>
     <script src="js/plugins.js"></script>
     <script src="./service-worker.js"></script>
    
