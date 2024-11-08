@@ -1,15 +1,16 @@
 const apiKey = "hZ-WeNZxfjw-7Ngf4x3yvvTThMpxOZXo45WDhxisPIU";
+
 const searchTerms = [
-    "disaster response",
-    "wildfire safety",
-    "natural disaster safety",
-    "emergency kit",
-    "earthquake safety",
-    "safety education children",
-    "storm preparation",
-    "emergency evacuation",
-    "emergency preparedness",
-    "flood safety"
+    "natural disaster safety for kids",
+    "emergency kit for children",
+    "fire safety for kids",
+    "earthquake safety for kids",
+    "flood safety for kids",
+    "storm preparation for kids",
+    "wildfire safety for kids",
+    "emergency evacuation for kids",
+    "safety education for children",
+    "disaster response for kids"
 ];
 
 let currentIndex = 0;
