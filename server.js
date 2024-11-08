@@ -26,7 +26,7 @@ let subscriptions = [];
 // Function to send notification
 const sendNotification = async (subscription, data) => {
     try {
-        console.log('Sending notification to:', subscription.endpoint); // Log the endpoint
+        console.log('Sending notification to:', subscription.endpoint);
         await webpush.sendNotification(subscription, JSON.stringify(data));
         console.log('Notification sent successfully to:', subscription.endpoint);
     } catch (error) {
@@ -48,14 +48,14 @@ const notifyAll = async (data) => {
 app.post('/save-subscription', (req, res) => {
     const subscription = req.body;
     if (!subscription) {
-        console.error('Subscription is required'); // Log error
+        console.error('Subscription is required');
         return res.status(400).json({ error: 'Subscription is required' });
     }
 
     const exists = subscriptions.find(sub => sub.endpoint === subscription.endpoint);
     if (!exists) {
         subscriptions.push(subscription);
-        console.log('New subscription saved:', subscription); // Log new subscription
+        console.log('New subscription saved:', subscription);
     }
 
     res.status(201).json({ message: 'Subscription saved successfully' });
@@ -80,6 +80,20 @@ app.get('/trigger-alert', async (req, res) => {
         console.error('Error sending notifications:', error);
         res.status(500).json({ error: 'Failed to send notifications' });
     }
+});
+
+app.get('/alerts', (req, res) => {
+    console.log('Received request for /alerts'); 
+    const alerts = [
+        {
+            title: 'Alerte Catastrophe Naturelle',
+            body: 'Une alerte a été détectée dans les Alpes-Maritimes',
+            timestamp: new Date().toISOString(),
+            department: '06'
+        }
+    ];
+    
+    res.status(200).json(alerts); 
 });
 
 // Error handling middleware
