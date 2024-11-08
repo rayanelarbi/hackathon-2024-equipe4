@@ -785,54 +785,7 @@ body {
     animation: fadeIn 0.5s;
 }
 
-.modal-content {
-    background: linear-gradient(135deg, #1E90FF, #FFD700); /* Bleu et jaune pour rappeler la sécurité et la vigilance */
-    border-radius: 20px;
-    padding: 30px;
-    width: 80%;
-    max-width: 500px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    text-align: center;
-    border: 4px solid #FFF;
-}
 
-.modal-content h2 {
-    color: #333333; /* Couleur sombre pour plus de contraste */
-    font-size: 2.5em;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-    font-family: 'Arial', sans-serif;
-    margin-bottom: 20px;
-}
-
-.modal-content p {
-    color: #333333; /* Texte en couleur sombre pour lisibilité */
-    font-size: 1.2em;
-    margin: 20px 0;
-    font-family: 'Arial Rounded MT Bold', sans-serif;
-}
-
-.modal-content button {
-    background-color: #2E8B57; /* Vert foncé pour suggérer la stabilité et la sécurité */
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-    font-family: 'Arial', sans-serif;
-    margin-top: 20px;
-}
-
-.modal-content button:hover {
-    transform: scale(1.1);
-    background-color: #1D7A4D; /* Changement de vert au survol */
-    box-shadow: 0 0 15px rgba(255,255,255,0.5);
-}
 
 .close {
     position: absolute;
@@ -899,17 +852,73 @@ body {
     100% { transform: scale(1); }
 }
 
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    .chat-messages {
-        height: 300px;
-    }
-
-    .user-message, .ai-message {
-        max-width: 90%;
-    }
+#random-image-grid {
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
 }
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
 
 
 /* ==========================================================================
