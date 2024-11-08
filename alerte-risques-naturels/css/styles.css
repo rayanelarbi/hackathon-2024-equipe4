@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    width: 300px;
+    padding: 10px;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 18px;
+}
+
+#alerts {
+    margin-top: 20px;
+}
+
+#checkNow {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#checkNow:hover {
+    background-color: #45a049;
+}

@@ -1,35 +1,71 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alerte Risques Naturels - Alpes-Maritimes</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <header>
         <h1>Alerte Risques Naturels - Alpes-Maritimes</h1>
         <p>Système d'alerte pour les inondations, feux de forêt, tremblements de terre et tsunamis</p>
     </header>
 
+
     <main>
-        <div id="plugin-modal" style="display:none;">
+        <div id="plugin-modal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h2>Système d'Alerte</h2>
-                <p>Activez les notifications pour être informé des risques naturels.</p>
-                <button onclick="initPlugin()">Activer les Notifications</button>
+                <h2>Plugin de Prévention des Catastrophes</h2>
+                <p>Ce plugin vous aide à rester informé des risques naturels dans les Alpes-Maritimes et vous guide sur
+                    les actions à entreprendre en cas de catastrophe.</p>
+                <ul>
+                    <li>Alertes en temps réel pour les inondations, feux de forêt, tremblements de terre et tsunamis
+                    </li>
+                    <li>Conseils de sécurité personnalisés</li>
+                    <li>Notifications push pour une réaction rapide</li>
+                </ul>
+                <a href="http://127.0.0.1:5500/hackathon-2024-equipe4\front\downloads\alerte-risques-naturels.zip"
+                    download>Télécharger l'extension</a>
+                <h2>Comment installer l'extension :</h2>
+                <ol>
+                    <li>Téléchargez le fichier ZIP en cliquant sur le lien ci-dessus.</li>
+                    <li>Ouvrez Chrome et allez à <code>chrome://extensions/</code>.</li>
+                    <li>Activez le "Mode développeur" en haut à droite.</li>
+                    <li>Cliquez sur "Charger l'extension non empaquetée".</li>
+                    <li>Sélectionnez le dossier extrait du ZIP que vous avez téléchargé.</li>
+                </ol>
             </div>
+        </div>
+        <h2>Système d'Alerte</h2>
+        <p>Activez les notifications pour être informé des risques naturels.</p>
+        <button onclick="initPlugin()">Activer les Notifications</button>
         </div>
 
         <section id="alerts">
             <h2>Alertes Actuelles</h2>
             <button onclick="testNotification()">Send Test Notification</button>
-           
-        </section>
-    </main>
 
-    <script src="js/plugins.js"></script>
-    <script src="./service-worker.js"></script>
+        </section>
+        <main>
+            <section class="modal">
+                <div class="little">
+                    <h2>Activités pour les tous petits</h2>
+                    <p>Des activités divertissantes pour apprendre des connaissances en securité !</p>
+                    <button id="openMainModal">Voir les activités</button>
+                </div>
+
+
 </body>
+
+</html>
+</main>
+
+<script src="js/plugins.js"></script>
+<script src="./service-worker.js"></script>
+</body>
+
 </html>
