@@ -1,16 +1,15 @@
-const apiKey = "hZ-WeNZxfjw-7Ngf4x3yvvTThMpxOZXo45WDhxisPIU";
-
+const apiKey = "b6fDqRHZmkssv8ClWxhxyIV4nfLhbaOiUZTSz36zNUru5Me1IHQB2Qqf"; // Remplacez par votre clé API Pexels
 const searchTerms = [
-    "natural disaster safety for kids",
-    "emergency kit for children",
-    "fire safety for kids",
-    "earthquake safety for kids",
-    "flood safety for kids",
-    "storm preparation for kids",
-    "wildfire safety for kids",
-    "emergency evacuation for kids",
-    "safety education for children",
-    "disaster response for kids"
+    "disaster prevention art",
+    "safety education art",
+    "emergency kit art",
+    "fire safety art",
+    "earthquake safety art",
+    "flood safety art",
+    "storm preparation art",
+    "wildfire safety art",
+    "emergency evacuation art",
+    "disaster response art"
 ];
 
 let currentIndex = 0;
@@ -25,21 +24,27 @@ async function fetchImages() {
     try {
         for (const term of searchTerms) {
             const response = await fetch(
-                `https://api.unsplash.com/photos/random?query=${term}&orientation=landscape&client_id=${apiKey}`
+                `https://api.pexels.com/v1/search?query=${term}&orientation=landscape`,
+                {
+                    headers: {
+                        Authorization: apiKey
+                    }
+                }
             );
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
+            if (data.photos.length > 0) {
+                const slide = document.createElement('div');
+                slide.className = 'carousel-slide';
 
-            const slide = document.createElement('div');
-            slide.className = 'carousel-slide';
+                const img = document.createElement('img');
+                img.src = data.photos[0].src.large;
 
-            const img = document.createElement('img');
-            img.src = data.urls.regular;
-
-            slide.appendChild(img);
-            carouselContainer.appendChild(slide);
+                slide.appendChild(img);
+                carouselContainer.appendChild(slide);
+            }
         }
 
         // Add navigation buttons
