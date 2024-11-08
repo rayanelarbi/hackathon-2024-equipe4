@@ -31,7 +31,7 @@
         <section class="modal">
             <div class="little">
                 <h2>Activités pour les tous petits</h2>
-                <p>Des activités divertissantes pour apprendre des connaissances en securité !</p>
+                <p>Des activités divertissantes pour acquérir des connaissances en sécurité !</p>
                 <button id="openMainModal">Voir les activités</button>
             </div>
 
@@ -110,8 +110,41 @@
                             </div>
                         </div>
                     </div>
+
+
+                    <!-- Quiz 1: Feux de forêt -->
+                    <div class="section">
+                        <h3>Quiz</h3>
+                        <div class="question">
+                            <p>Question 1 :</p>
+                            <p>Pourquoi est-il important de ne pas jouer avec des allumettes ou un briquet ?</p>
+                            <label><input type="radio" name="q1_fire" value="A"> A) Parce que ça peut faire du bruit.</label><br>
+                            <label><input type="radio" name="q1_fire" value="B"> B) Parce que cela peut provoquer un incendie.</label><br>
+                            <label><input type="radio" name="q1_fire" value="C"> C) Parce que ce sont des objets de collection.</label><br>
+                        </div>
+                        <div class="question">
+                            <p>Question 2 :</p>
+                            <p>Que dois-tu faire si tu vois de la fumée ou un incendie dans la maison ?</p>
+                            <label><input type="radio" name="q2_fire" value="A"> A) Aller voir de plus près pour mieux comprendre.</label><br>
+                            <label><input type="radio" name="q2_fire" value="B"> B) Courir vers la cuisine pour chercher de l'eau.</label><br>
+                            <label><input type="radio" name="q2_fire" value="C"> C) Sortir de la maison rapidement et appeler un adulte.</label><br>
+                        </div>
+                        <div class="question">
+                            <p>Question 3 :</p>
+                            <p>Quelle est la meilleure chose à faire si tes vêtements prennent feu ?</p>
+                            <label><input type="radio" name="q3_fire" value="A"> A) Courir pour éloigner les flammes.</label><br>
+                            <label><input type="radio" name="q3_fire" value="B"> B) Crier très fort pour faire peur au feu.</label><br>
+                            <label><input type="radio" name="q3_fire" value="C"> C) S'arrêter, se jeter au sol et rouler pour étouffer les flammes.</label><br>
+                        </div>
+                        <button onclick="checkAnswers('fire')">Vérifier les réponses</button>
+                        <div class="result" id="result_fire"></div>
+                    </div>
                 </div>
             </div>
+            
+
+
+
 
             <!-- Modale Inondations - Enfants -->
             <div id="inondationModal" class="modal-container">
@@ -163,8 +196,37 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Quiz 2: Inondations -->
+                    <div class="section">
+                        <h3>Quiz</h3>
+                        <div class="question">
+                            <p>Question 1 :</p>
+                            <p>Que dois-tu faire si tu vois que l'eau commence à monter rapidement autour de toi?</p>
+                            <label><input type="radio" name="q1_flood" value="A"> A) Rester où tu es et attendre que l'eau s'arrête de monter.</label><br>
+                            <label><input type="radio" name="q1_flood" value="B"> B) Monter sur une table ou un endroit plus élevé et appeler un adulte.</label><br>
+                            <label><input type="radio" name="q1_flood" value="C"> C) Sortir dehors pour jouer dans l'eau.</label><br>
+                        </div>
+                        <div class="question">
+                            <p>Question 2 :</p>
+                            <p>Pourquoi est-il dangereux de jouer dans l'eau d'une inondation ?</p>
+                            <label><input type="radio" name="q2_flood" value="A"> A) Parce que l'eau est froide.</label><br>
+                            <label><input type="radio" name="q2_flood" value="B"> B) Parce que l'eau peut être sale et cacher des dangers comme des objets pointus.</label><br>
+                            <label><input type="radio" name="q2_flood" value="C"> C) Parce que ça peut abîmer tes chaussures.</label><br>
+                        </div>
+                        <div class="question">
+                            <p>Question 3 :</p>
+                            <p>Que faut-il faire si tu dois évacuer la maison à cause d'une inondation ?</p>
+                            <label><input type="radio" name="q3_flood" value="A"> A) Prendre le maximum de jouets avec toi.</label><br>
+                            <label><input type="radio" name="q3_flood" value="B"> B) Suivre calmement les adultes et ne pas retourner chercher des affaires.</label><br>
+                            <label><input type="radio" name="q3_flood" value="C"> C) Rester dans ta chambre et attendre que l'eau descende.</label><br>
+                        </div>
+                        <button onclick="checkAnswers('flood')">Vérifier les réponses</button>
+                        <div class="result" id="result_flood"></div>
+                    </div>
                 </div>
             </div>
+            
+
 
             <!-- Modale Séismes - Enfants -->
             <div id="seismeModal" class="modal-container">
@@ -216,8 +278,39 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Quiz 3: Tremblements de Terre -->
+                    <div class="section">
+                        <h3>Quiz</h3>
+                        <div class="question">
+                            <p>Question 1 :</p>
+                            <p>Que dois-tu faire si tu es à l'intérieur et que tu sens la terre trembler ?</p>
+                            <label><input type="radio" name="q1_earthquake" value="A"> A) Courir dehors le plus vite possible.</label><br>
+                            <label><input type="radio" name="q1_earthquake" value="B"> B) Te mettre sous une table ou contre un mur porteur et protéger ta tête.</label><br>
+                            <label><input type="radio" name="q1_earthquake" value="C"> C) Regarder autour de toi pour voir ce qui tombe.</label><br>
+                        </div>
+                        <div class="question">
+                            <p>Question 2 :</p>
+                            <p>Pourquoi est-il important de ne pas utiliser l'ascenseur pendant un tremblement de terre ?</p>
+                            <label><input type="radio" name="q2_earthquake" value="A"> A) Parce que ça peut être lent.</label><br>
+                            <label><input type="radio" name="q2_earthquake" value="B"> B) Parce que l'ascenseur pourrait rester coincé.</label><br>
+                            <label><input type="radio" name="q2_earthquake" value="C"> C) Parce que c'est plus amusant de prendre les escaliers.</label><br>
+                        </div>
+                        <div class="question">
+                            <p>Question 3 :</p>
+                            <p>Que dois-tu faire si tu es dehors pendant un séisme ?</p>
+                            <label><input type="radio" name="q3_earthquake" value="A"> A) Te rapprocher des arbres et des bâtiments.</label><br>
+                            <label><input type="radio" name="q3_earthquake" value="B"> B) Rester loin des bâtiments, des arbres et des fils électriques.</label><br>
+                            <label><input type="radio" name="q3_earthquake" value="C"> C) T'asseoir par terre et fermer les yeux.</label><br>
+                        </div>
+                        <button onclick="checkAnswers('earthquake')">Vérifier les réponses</button>
+                        <div class="result" id="result_earthquake"></div>
+                    </div>
                 </div>
             </div>
+
+            
+
 
             <!-- Modale Tsunamis - Enfants -->
             <div id="tsunamiModal" class="modal-container">
@@ -269,12 +362,49 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Quiz 4: Tsunami -->
+                    <div class="section">
+                        <h3>Quiz</h3>
+                        <div class="question">
+                            <p>Question 1 :</p>
+                            <p>Si tu es à la plage et que tu vois la mer se retirer soudainement, que dois-tu faire ?</p>
+                            <label><input type="radio" name="q1_tsunami" value="A"> A) Courir vers l’eau pour voir les poissons qui sont restés.</label><br>
+                            <label><input type="radio" name="q1_tsunami" value="B"> B) T’éloigner rapidement de la plage et monter vers un endroit plus élevé.</label><br>
+                            <label><input type="radio" name="q1_tsunami" value="C"> C) Te cacher sous un parasol.</label><br>
+                        </div>
+                        <div class="question">
+                            <p>Question 2 :</p>
+                            <p>Pourquoi est-il important d’écouter les sirènes ou les alarmes de tsunami ?</p>
+                            <label><input type="radio" name="q2_tsunami" value="A"> A) Parce qu'elles sont bruyantes.</label><br>
+                            <label><input type="radio" name="q2_tsunami" value="B"> B) Parce qu'elles préviennent d'un danger, et il faut évacuer rapidement.</label><br>
+                            <label><input type="radio" name="q2_tsunami" value="C"> C) Parce qu'elles annoncent des promotions de plage.</label><br>
+                        </div>
+                        <div class="question">
+                            <p>Question 3 :</p>
+                            <p>Que dois-tu faire une fois que tu es à l'abri d'un tsunami ?</p>
+                            <label><input type="radio" name="q3_tsunami" value="A"> A) Attendre les informations des autorités avant de retourner près de la mer.</label><br>
+                            <label><input type="radio" name="q3_tsunami" value="B"> B) Retourner immédiatement sur la plage pour voir les vagues.</label><br>
+                            <label><input type="radio" name="q3_tsunami" value="C"> C) Appeler tes amis pour leur montrer ce que tu as vu.</label><br>
+                        </div>
+                        <button onclick="checkAnswers('tsunami')">Vérifier les réponses</button>
+                        <div class="result" id="result_tsunami"></div>
+                    </div>
                 </div>
             </div>
+            
+
+
+           
+
+
+
+
+
+
 
             <div class="ados">
                 <h2>Activités pour les plus grands</h2>
-                <p>Soyez prêts à apprendre des connaissances en sécurité !</p>
+                <p>Soyez prêts à acquérir des connaissances en sécurité !</p>
                 <button id="openAdosModal">Voir les activités</button>
             </div>
 
@@ -282,7 +412,7 @@
             <div id="adosModal" class="modal-container-ados">
                 <div class="modal-content-ados">
                     <span class="close">&times;</span>
-                    <h2>Zones de Risques Naturels</h2>
+                    <h2>Choisissez votre risque naturel</h2>
                     <div class="risk-grid-ados">
                         <div class="risk-card-ados" data-modal="feuAdosModal">
                             <div class="card-content">
@@ -315,6 +445,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Feux de forêts Modal -->
             <div id="feuAdosModal" class="modal-container-ados">
                 <div class="modal-content-ados">
                     <span class="close">&times;</span>
@@ -342,9 +474,317 @@
                             </div>
                         </div>
                     </div>
+                     <!-- Quiz 1: Feux de forêt -->
+                     <div class="section2">
+                        <h3>Quiz</h3>
+                        <div class="question">
+                            <p>Question 1 :</p>
+                            <p>Pourquoi est-il important de suivre les consignes de sécurité incendie dans les lieux publics, comme l'école ou le cinéma ?</p>
+                            <label><input type="radio" name="q1_fireado" value="A"> A) Parce que cela aide tout le monde à sortir rapidement en cas d’incendie.</label><br>
+                            <label><input type="radio" name="q1_fireado" value="B"> B) Parce que c'est plus rapide d'évacuer par une fenêtre.</label><br>
+                            <label><input type="radio" name="q1_fireado" value="C"> C) Parce que les consignes sont faites pour embêter les gens.</label><br>
+                        </div>
+                        <div class="question">
+                            <p>Question 2 :</p>
+                            <p>Quel est le meilleur endroit pour installer un détecteur de fumée à la maison ?</p>
+                            <label><input type="radio" name="q2_fireado" value="A"> A) Dans les chambres pour réveiller tout le monde en cas de fumée.</label><br>
+                            <label><input type="radio" name="q2_fireado" value="B"> B) Dans la salle de bain pour que le détecteur soit au frais.</label><br>
+                            <label><input type="radio" name="q2_fireado" value="C"> C) Dans un placard, car il est plus discret.</label><br>
+                        </div>
+                        <div class="question">
+                            <p>Question 3 :</p>
+                            <p>Que faut-il éviter de faire pour réduire le risque d’incendie à la maison ?</p>
+                            <label><input type="radio" name="q3_fireado" value="A"> A) Laisser les appareils électriques branchés, même s'ils sont défectueux.</label><br>
+                            <label><input type="radio" name="q3_fireado" value="B"> B) Éteindre tous les appareils quand ils ne sont pas utilisés.</label><br>
+                            <label><input type="radio" name="q3_fireado" value="C"> C) Garder les espaces autour des appareils de chauffage bien dégagés.</label><br>
+                        </div>
+                        <button onclick="checkAnswers('fireado')">Vérifier les réponses</button>
+                        <div class="result" id="result_fireado"></div>
+                    </div>
+                
                 </div>
             </div>
+
+
+
+
+
+
+
+            <!-- Inondation Modal -->
+            <div id="inondationAdosModal" class="modal-container-ados">
+                <div class="modal-content-ados">
+                    <span class="close">&times;</span>
+                    <h2>Prévention et Gestion des Inondations</h2>
+                    <div class="risk-content-ados">
+                        <div class="info-section-ados">
+                            <img src="images/imgs/inondation-prevention-ados.jpg" alt="Analyse inondation">
+                            <h3>Protocole de Sécurité</h3>
+                            <ul>
+                                <li>Éviter les zones basses et les rivières pendant les périodes de fortes pluies.</li>
+                                <li>Connaitre les routes d'évacuation et les points de refuge.</li>
+                                <li>Gardez une trousse de secours et des provisions d'urgence.</li>
+                                <li>Numéros d'urgence : 18 (Pompiers), 112 (Urgences Européennes)</li>
+                            </ul>
+                        </div>
+                        <div class="simulation-section">
+                            <h3>Scénario d'Intervention</h3>
+                            <div class="scenario">
+                                <p>Une forte pluie a causé une inondation dans ta région. Quelle est la meilleure chose à faire ?</p>
+                                <div class="action-sequence">
+                                    <button class="sequence-btn" data-order="1">Se déplacer vers un terrain plus élevé.</button>
+                                    <button class="sequence-btn" data-order="2">Prendre un parapluie et marcher dans l'eau.</button>
+                                    <button class="sequence-btn" data-order="3">Écouter les instructions des autorités locales.</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quiz 2: Inondations -->
+                    <div class="section2">
+                        <h3>Quiz</h3>
+                        <div class="question">
+                            <p>Question 1 :</p>
+                            <p>Si tu te trouves à l'extérieur et qu'une inondation rapide commence, que dois-tu faire ?</p>
+                            <label><input type="radio" name="q1_floodado" value="A"> A) Te déplacer vers un terrain plus élevé, loin des cours d'eau et des zones basses.</label><br>
+                            <label><input type="radio" name="q1_floodado" value="B"> B) Courir pour essayer de traverser les zones inondées le plus vite possible.</label><br>
+                            <label><input type="radio" name="q1_floodado" value="C"> C) Rester sur place pour attendre de l'aide.</label><br>
+                        </div>
+                        <div class="question">
+                            <p>Question 2 :</p>
+                            <p>Pourquoi est-il dangereux de conduire ou de marcher dans l'eau d'une inondation, même si elle semble peu profonde ?</p>
+                            <label><input type="radio" name="q2_floodado" value="A"> A) Parce que l'eau est froide et ça pourrait être inconfortable.</label><br>
+                            <label><input type="radio" name="q2_floodado" value="B"> B) Parce que l'eau peut être plus profonde et plus rapide que ce qu'on pense, et cela peut emporter même une voiture.</label><br>
+                            <label><input type="radio" name="q2_floodado" value="C"> C) Parce que ça mouille les vêtements.</label><br>
+                        </div>
+                        <div class="question">
+                            <p>Question 3 :</p>
+                            <p>Quel est l'un des objets les plus importants à avoir dans un kit d'urgence en cas d'inondation ?</p>
+                            <label><input type="radio" name="q3_floodado" value="A"> A) Une lampe de poche pour voir dans l’obscurité.</label><br>
+                            <label><input type="radio" name="q3_floodado" value="B"> B) Des lunettes de soleil pour voir sous l'eau.</label><br>
+                            <label><input type="radio" name="q3_floodado" value="C"> C) Un ballon pour s’amuser pendant qu'on attend l’aide.</label><br>
+                        </div>
+                        <button onclick="checkAnswers('floodado')">Vérifier les réponses</button>
+                        <div class="result" id="result_floodado"></div>   
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            
+            <!-- Séisme Modal -->
+            <div id="seismeAdosModal" class="modal-container-ados">
+                <div class="modal-content-ados">
+                    <span class="close">&times;</span>
+                    <h2>Prévention et Gestion des Séismes</h2>
+                    <div class="risk-content-ados">
+                        <div class="info-section-ados">
+                            <img src="images/imgs/seisme-prevention-ados.jpg" alt="Analyse séisme">
+                            <h3>Protocole de Sécurité</h3>
+                            <ul>
+                                <li>Reste calme et protège-toi sous un meuble solide.</li>
+                                <li>Éloigne-toi des fenêtres et des objets qui peuvent tomber.</li>
+                                <li>Après le tremblement, vérifie les dangers immédiats avant de sortir.</li>
+                                <li>Numéros d'urgence : 18 (Pompiers), 112 (Urgences Européennes)</li>
+                            </ul>
+                        </div>
+                        <div class="simulation-section">
+                            <h3>Scénario d'Intervention</h3>
+                            <div class="scenario">
+                                <p>Un séisme vient de se produire. Que dois-tu faire immédiatement ?</p>
+                                <div class="action-sequence">
+                                    <button class="sequence-btn" data-order="1">Protéger ta tête sous une table solide.</button>
+                                    <button class="sequence-btn" data-order="2">Sortir immédiatement dehors.</button>
+                                    <button class="sequence-btn" data-order="3">Rester immobile jusqu'à la fin des secousses.</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quiz 3: Tremblements de Terre -->
+                    <div class="section2">
+                        <h3>Quiz</h3>
+                        <div class="question">
+                            <p>Question 1 :</p>
+                            <p>Quelle est la meilleure chose à faire si tu te trouves dans une grande pièce sans abri, comme un gymnase, pendant un tremblement de terre ?</p>
+                            <label><input type="radio" name="q1_earthquakeado" value="A"> A) Te diriger vers une sortie en courant.</label><br>
+                            <label><input type="radio" name="q1_earthquakeado" value="B"> B) Te mettre en position accroupie et protéger ta tête jusqu'à la fin de la secousse.</label><br>
+                            <label><input type="radio" name="q1_earthquakeado" value="C"> C) T'allonger sur le sol.</label><br>
+                        </div>
+                        <div class="question">
+                            <p>Question 2 :</p>
+                            <p>Pourquoi est-il recommandé de préparer un kit d'urgence en cas de séisme ?</p>
+                            <label><input type="radio" name="q2_earthquakeado" value="A"> A) Parce que c'est une bonne façon d'utiliser un vieux sac à dos.</label><br>
+                            <label><input type="radio" name="q2_earthquakeado" value="B"> B) Parce qu'il peut contenir de la nourriture, de l'eau et des outils nécessaires après un séisme.</label><br>
+                            <label><input type="radio" name="q2_earthquakeado" value="C"> C) Parce que c'est utile pour se faire remarquer.</label><br>
+                        </div>
+                        <div class="question">
+                            <p>Question 3 :</p>
+                            <p>Après un tremblement de terre, quelle est la première chose à faire avant de rentrer chez soi ou dans un bâtiment ?</p>
+                            <label><input type="radio" name="q3_earthquakeado" value="A"> A) Vérifier s'il y a des secousses secondaires (répliques).</label><br>
+                            <label><input type="radio" name="q3_earthquakeado" value="B"> B) Appeler ses amis pour raconter l’expérience.</label><br>
+                            <label><input type="radio" name="q3_earthquakeado" value="C"> C) Entrer immédiatement pour voir si rien n'a été cassé.</label><br>
+                        </div>
+                        <button onclick="checkAnswers('earthquakeado')">Vérifier les réponses</button>
+                        <div class="result" id="result_earthquakeado"></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <!-- Tsunami Modal -->
+            <div id="tsunamiAdosModal" class="modal-container-ados">
+                <div class="modal-content-ados">
+                    <span class="close">&times;</span>
+                    <h2>Prévention et Gestion des Tsunamis</h2>
+                    <div class="risk-content-ados">
+                        <div class="info-section-ados">
+                            <img src="images/imgs/tsunami-prevention-ados.jpg" alt="Analyse tsunami">
+                            <h3>Protocole de Sécurité</h3>
+                            <ul>
+                                <li>Écouter les alertes de tsunami et évacuer vers les hauteurs immédiatement.</li>
+                                <li>Se tenir à l'écart de la plage après le retrait soudain de la mer.</li>
+                                <li>Suivre les consignes des autorités locales et se préparer à l'éventuelle récurrence du phénomène.</li>
+                                <li>Numéros d'urgence : 18 (Pompiers), 112 (Urgences Européennes)</li>
+                            </ul>
+                        </div>
+                        <div class="simulation-section">
+                            <h3>Scénario d'Intervention</h3>
+                            <div class="scenario">
+                                <p>Tu observes un retrait rapide de la mer. Quelle est la première chose à faire ?</p>
+                                <div class="action-sequence">
+                                    <button class="sequence-btn" data-order="1">Évacuer immédiatement vers un point élevé.</button>
+                                    <button class="sequence-btn" data-order="2">Rester sur place pour observer les vagues.</button>
+                                    <button class="sequence-btn" data-order="3">Appeler les secours pour signaler la situation.</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quiz 4: Tsunami -->
+                    <div class="section2">
+                        <h3>Quiz</h3>
+                        <div class="question">
+                            <p>Question 1 :</p>
+                            <p>Quelles sont les premières choses à surveiller pour repérer un possible tsunami ?</p>
+                            <label><input type="radio" name="q1_tsunamiado" value="A"> A) Un changement soudain du niveau de la mer, comme un retrait rapide de l’eau, ou un séisme récent.</label><br>
+                            <label><input type="radio" name="q1_tsunamiado" value="B"> B) Des nuages sombres dans le ciel.</label><br>
+                            <label><input type="radio" name="q1_tsunamiado" value="C"> C) Des oiseaux volant plus bas que d'habitude.</label><br>
+                        </div>
+                        <div class="question">
+                            <p>Question 2 :</p>
+                            <p>Pourquoi est-il dangereux de retourner dans les zones touchées juste après la première vague d'un tsunami ?</p>
+                            <label><input type="radio" name="q2_tsunamiado" value="A"> A) Parce qu'il peut y avoir d'autres vagues plus puissantes après la première.</label><br>
+                            <label><input type="radio" name="q2_tsunamiado" value="B"> B) Parce que l'eau est trop froide.</label><br>
+                            <label><input type="radio" name="q2_tsunamiado" value="C"> C) Parce que la mer pourrait être trop calme.</label><br>
+                        </div>
+                        <div class="question">
+                            <p>Question 3 :</p>
+                            <p>Quel est le meilleur endroit pour se réfugier en cas de menace de tsunami ?</p>
+                            <label><input type="radio" name="q3_tsunamiado" value="A"> A) Sur le toit d’une voiture.</label><br>
+                            <label><input type="radio" name="q3_tsunamiado" value="B"> B) En hauteur, sur une colline ou un immeuble résistant.</label><br>
+                            <label><input type="radio" name="q3_tsunamiado" value="C"> C) Sur le sable près de la plage.</label><br>
+                        </div>
+                        <button onclick="checkAnswers('tsunamiado')">Vérifier les réponses</button>
+                        <div class="result" id="result_tsunamiado"></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <script>
+                function checkAnswers(quizId) {
+                    // Define correct answers for each quiz
+                    const answers = {
+                        "fire": {
+                            "q1_fire": "B",
+                            "q2_fire": "C",
+                            "q3_fire": "C"
+                        },
+                        "flood": {
+                            "q1_flood": "B",
+                            "q2_flood": "B",
+                            "q3_flood": "B"
+                        },
+                        "earthquake": {
+                            "q1_earthquake": "B",
+                            "q2_earthquake": "B",
+                            "q3_earthquake": "B"
+                        },
+                        "tsunami": {
+                            "q1_tsunami": "B",
+                            "q2_tsunami": "B",
+                            "q3_tsunami": "A"
+                        },
+                        "fireado": {
+                            "q1_fireado": "A",
+                            "q2_fireado": "A",
+                            "q3_fireado": "A"
+                        },
+                        "floodado": {
+                            "q1_floodado": "A",
+                            "q2_floodado": "B",
+                            "q3_floodado": "A"
+                        },
+                        "earthquakeado": {
+                            "q1_earthquakeado": "B",
+                            "q2_earthquakeado": "B",
+                            "q3_earthquakeado": "A"
+                        },
+                        "tsunamiado": {
+                            "q1_tsunamiado": "A",
+                            "q2_tsunamiado": "A",
+                            "q3_tsunamiado": "B"
+                        }
+                    };
+            
+                    // Retrieve the correct answers based on the selected quizId
+                    let correctAnswers = answers[quizId];
+                    let score = 0;
+                    let totalQuestions = Object.keys(correctAnswers).length;
+            
+                    // Loop through each question in the quiz and check if the selected answer is correct
+                    for (let question in correctAnswers) {
+                        let radios = document.getElementsByName(question);
+                        for (let radio of radios) {
+                            if (radio.checked && radio.value === correctAnswers[question]) {
+                                score++;
+                            }
+                        }
+                    }
+            
+                    // Display result in the corresponding result div for this quiz section
+                    let resultMessage = `Vous avez répondu correctement à ${score} sur ${totalQuestions} questions.`;
+                    document.getElementById(`result_${quizId}`).innerText = resultMessage;
+                }
+            </script>
+            
+
+
+
+
+
+
+
+
+
         </section>
+
+
+
         <section id="ia-chat-section">
             <h2>Parle avec moi ! 🤖✨</h2>
 

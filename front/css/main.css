@@ -141,7 +141,7 @@ body {
 
 .little h2 {
     color: #ff6600;
-    font-family: "Comic Neue", sans-serif;
+    font-family: "Accuratist", sans-serif;
     font-size: 2em;
     margin-bottom: 20px;
 }
@@ -243,6 +243,7 @@ body {
     max-width: 800px;
     border-radius: 15px;
     animation: modalOpen 0.3s ease-out;
+    font-family: "Comic Neue", sans-serif;
 }
 
 @keyframes modalOpen {
@@ -313,6 +314,7 @@ body {
     max-width: 1000px;
     border-radius: 20px;
     color: white;
+    
     animation: modalOpenAdos 0.4s ease-out;
 }
 
