@@ -708,3 +708,21 @@ body {
 .clearfix {
     zoom: 1;
 }
+
+@keyframes confetti {
+    0% { transform: translateY(-100px); opacity: 1; }
+    100% { transform: translateY(500px); opacity: 0; }
+}
+
+.confetti {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #ff0; /* Jaune */
+    border-radius: 50%;
+    animation: confetti 1.5s ease-out forwards;
+    z-index: 9999;
+}
+

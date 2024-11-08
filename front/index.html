@@ -31,7 +31,7 @@
         <section class="modal">
             <div class="little">
                 <h2>Activités pour les tous petits</h2>
-                <p>Des activités divertissantes pour acquérir des connaissances en sécurité !</p>
+                <p>Des activités divertissantes pour apprendre des connaissances en securité !</p>
                 <button id="openMainModal">Voir les activités</button>
             </div>
 
@@ -138,6 +138,7 @@
                         </div>
                         <button onclick="checkAnswers('fire')">Vérifier les réponses</button>
                         <div class="result" id="result_fire"></div>
+                        <audio id="confetti-sound" src="minecraft---experience-orb-made-with-Voicemod.mp3" preload="auto"></audio>
                     </div>
                 </div>
             </div>
@@ -222,6 +223,7 @@
                         </div>
                         <button onclick="checkAnswers('flood')">Vérifier les réponses</button>
                         <div class="result" id="result_flood"></div>
+                        <audio id="confetti-sound" src="minecraft---experience-orb-made-with-Voicemod.mp3" preload="auto"></audio>
                     </div>
                 </div>
             </div>
@@ -305,6 +307,7 @@
                         </div>
                         <button onclick="checkAnswers('earthquake')">Vérifier les réponses</button>
                         <div class="result" id="result_earthquake"></div>
+                        <audio id="confetti-sound" src="minecraft---experience-orb-made-with-Voicemod.mp3" preload="auto"></audio>
                     </div>
                 </div>
             </div>
@@ -388,6 +391,7 @@
                         </div>
                         <button onclick="checkAnswers('tsunami')">Vérifier les réponses</button>
                         <div class="result" id="result_tsunami"></div>
+                        <audio id="confetti-sound" src="minecraft---experience-orb-made-with-Voicemod.mp3" preload="auto"></audio>
                     </div>
                 </div>
             </div>
@@ -404,7 +408,7 @@
 
             <div class="ados">
                 <h2>Activités pour les plus grands</h2>
-                <p>Soyez prêts à acquérir des connaissances en sécurité !</p>
+                <p>Soyez prêts à apprendre des connaissances en sécurité !</p>
                 <button id="openAdosModal">Voir les activités</button>
             </div>
 
@@ -494,12 +498,13 @@
                         <div class="question">
                             <p>Question 3 :</p>
                             <p>Que faut-il éviter de faire pour réduire le risque d’incendie à la maison ?</p>
-                            <label><input type="radio" name="q3_fireado" value="A"> A) Laisser les appareils électriques branchés, même s'ils sont défectueux.</label><br>
-                            <label><input type="radio" name="q3_fireado" value="B"> B) Éteindre tous les appareils quand ils ne sont pas utilisés.</label><br>
-                            <label><input type="radio" name="q3_fireado" value="C"> C) Garder les espaces autour des appareils de chauffage bien dégagés.</label><br>
+                            <label><input type="radio" name="q3_fire" value="A"> A) Laisser les appareils électriques branchés, même s'ils sont défectueux.</label><br>
+                            <label><input type="radio" name="q3_fire" value="B"> B) Éteindre tous les appareils quand ils ne sont pas utilisés.</label><br>
+                            <label><input type="radio" name="q3_fire" value="C"> C) Garder les espaces autour des appareils de chauffage bien dégagés.</label><br>
                         </div>
                         <button onclick="checkAnswers('fireado')">Vérifier les réponses</button>
                         <div class="result" id="result_fireado"></div>
+                        <audio id="confetti-sound" src="minecraft---experience-orb-made-with-Voicemod.mp3" preload="auto"></audio>
                     </div>
                 
                 </div>
@@ -564,7 +569,8 @@
                             <label><input type="radio" name="q3_floodado" value="C"> C) Un ballon pour s’amuser pendant qu'on attend l’aide.</label><br>
                         </div>
                         <button onclick="checkAnswers('floodado')">Vérifier les réponses</button>
-                        <div class="result" id="result_floodado"></div>   
+                        <div class="result" id="result_floodado"></div> 
+                        <audio id="confetti-sound" src="minecraft---experience-orb-made-with-Voicemod.mp3" preload="auto"></audio>  
                     </div>
                 </div>
             </div>
@@ -629,6 +635,7 @@
                         </div>
                         <button onclick="checkAnswers('earthquakeado')">Vérifier les réponses</button>
                         <div class="result" id="result_earthquakeado"></div>
+                        <audio id="confetti-sound" src="minecraft---experience-orb-made-with-Voicemod.mp3" preload="auto"></audio>     
                     </div>
                 </div>
             </div>
@@ -694,6 +701,7 @@
                         </div>
                         <button onclick="checkAnswers('tsunamiado')">Vérifier les réponses</button>
                         <div class="result" id="result_tsunamiado"></div>
+                        <audio id="confetti-sound" src="minecraft---experience-orb-made-with-Voicemod.mp3" preload="auto"></audio>
                     </div>
                 </div>
             </div>
@@ -701,6 +709,7 @@
 
 
 
+        
 
 
 
@@ -751,26 +760,80 @@
                         }
                     };
             
-                    // Retrieve the correct answers based on the selected quizId
-                    let correctAnswers = answers[quizId];
-                    let score = 0;
-                    let totalQuestions = Object.keys(correctAnswers).length;
-            
-                    // Loop through each question in the quiz and check if the selected answer is correct
-                    for (let question in correctAnswers) {
-                        let radios = document.getElementsByName(question);
-                        for (let radio of radios) {
-                            if (radio.checked && radio.value === correctAnswers[question]) {
-                                score++;
-                            }
-                        }
-                    }
-            
-                    // Display result in the corresponding result div for this quiz section
-                    let resultMessage = `Vous avez répondu correctement à ${score} sur ${totalQuestions} questions.`;
-                    document.getElementById(`result_${quizId}`).innerText = resultMessage;
-                }
+// Récupérer les réponses correctes pour le quiz sélectionné
+let correctAnswers = answers[quizId];
+    let score = 0;
+    let totalQuestions = Object.keys(correctAnswers).length;
+
+    // Vérifier les réponses de l'utilisateur
+    for (let question in correctAnswers) {
+        let radios = document.getElementsByName(question);
+        for (let radio of radios) {
+            if (radio.checked && radio.value === correctAnswers[question]) {
+                score++;
+            }
+        }
+    }
+
+    // Définir l'emoji en fonction du score
+    let emoji = score === totalQuestions ? "✅" : "😞"; 
+
+    // Afficher le résultat
+    let resultMessage = `Vous avez répondu correctement à ${score} sur ${totalQuestions} questions. ${emoji}`;
+    document.getElementById(`result_${quizId}`).innerText = resultMessage;
+
+    // Lancer l'animation des confettis si toutes les réponses sont correctes
+    if (score === totalQuestions) {
+        launchConfetti();
+        playConfettiSound();
+    }
+}
+
+// Fonction pour créer et lancer des confettis en continu pendant 5 secondes
+function launchConfetti() {
+    const duration = 5000; // Durée de l'effet (5 secondes)
+    const interval = 100;  // Intervalle entre la création des confettis
+    const endTime = Date.now() + duration;
+
+    const confettiInterval = setInterval(() => {
+        if (Date.now() > endTime) {
+            clearInterval(confettiInterval);
+        } else {
+            createConfetti();
+        }
+    }, interval);
+}
+
+// Fonction pour jouer le son des confettis
+function playConfettiSound() {
+    const audio = document.getElementById("confetti-sound");
+    if (audio) {
+        audio.currentTime = 0; // Recommencer le son à partir du début
+        audio.play();
+    }
+}
+
+// Fonction pour créer un confetti unique
+function createConfetti() {
+    let confetti = document.createElement("div");
+    confetti.classList.add("confetti");
+    confetti.style.left = Math.random() * window.innerWidth + "px";
+    confetti.style.backgroundColor = getRandomColor();
+    document.body.appendChild(confetti);
+
+    // Retirer les confettis après 3 secondes pour éviter l'encombrement
+    setTimeout(() => {
+        confetti.remove();
+    }, 3000);
+}
+
+// Fonction pour obtenir une couleur aléatoire
+function getRandomColor() {
+    const colors = ["#ff0", "#0f0", "#00f", "#f0f", "#f00", "#0ff"];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
             </script>
+            
             
 
 
