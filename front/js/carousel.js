@@ -1,15 +1,16 @@
-const apiKey = "b6fDqRHZmkssv8ClWxhxyIV4nfLhbaOiUZTSz36zNUru5Me1IHQB2Qqf"; // Remplacez par votre clé API Pexels
+const apiKey = "b6fDqRHZmkssv8ClWxhxyIV4nfLhbaOiUZTSz36zNUru5Me1IHQB2Qqf";
+
 const searchTerms = [
-    "disaster prevention art",
-    "safety education art",
-    "emergency kit art",
-    "fire safety art",
-    "earthquake safety art",
-    "flood safety art",
-    "storm preparation art",
-    "wildfire safety art",
-    "emergency evacuation art",
-    "disaster response art"
+    "natural disaster",
+    "hurricane damage",
+    "earthquake destruction",
+    "tsunami waves",
+    "volcanic eruption",
+    "tornado storm",
+    "flood disaster",
+    "wildfire forest",
+    "landslide disaster",
+    "avalanche mountain"
 ];
 
 let currentIndex = 0;
@@ -17,23 +18,24 @@ let currentIndex = 0;
 async function fetchImages() {
     const container = document.getElementById('random-image-grid');
 
-    // Create carousel structure
     const carouselContainer = document.createElement('div');
     carouselContainer.className = 'carousel-container';
 
     try {
         for (const term of searchTerms) {
             const response = await fetch(
-                `https://api.pexels.com/v1/search?query=${term}&orientation=landscape`,
+                `https://api.pexels.com/v1/search?query=${term}&orientation=landscape&per_page=1`,
                 {
                     headers: {
                         Authorization: apiKey
                     }
                 }
             );
+            
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
+
             const data = await response.json();
             if (data.photos.length > 0) {
                 const slide = document.createElement('div');
@@ -41,13 +43,18 @@ async function fetchImages() {
 
                 const img = document.createElement('img');
                 img.src = data.photos[0].src.large;
+                img.alt = term;
+
+                const caption = document.createElement('div');
+                caption.className = 'slide-caption';
+                caption.textContent = term.charAt(0).toUpperCase() + term.slice(1);
 
                 slide.appendChild(img);
+                slide.appendChild(caption);
                 carouselContainer.appendChild(slide);
             }
         }
 
-        // Add navigation buttons
         const prevBtn = document.createElement('button');
         prevBtn.className = 'carousel-btn prev-btn';
         prevBtn.innerHTML = '&#10094;';
@@ -62,7 +69,6 @@ async function fetchImages() {
         container.appendChild(prevBtn);
         container.appendChild(nextBtn);
 
-        // Start auto-slide
         setInterval(() => moveSlide(1), 5000);
 
     } catch (error) {
@@ -77,5 +83,4 @@ function moveSlide(direction) {
     container.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-// Initialize carousel when DOM is loaded
 document.addEventListener('DOMContentLoaded', fetchImages);
